@@ -1,0 +1,9 @@
+{
+  "name": "loadout-casino",
+  "version": "1.0.0",
+  "description": "Random shield + ability loadout roller that respects your credit budget",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "license": "MIT"
+}

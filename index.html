@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loadout Casino</title>
+  <meta name="description" content="Roll a random shield and ability loadout based on your credits and agent.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Loadout <span>Casino</span></h1>
+      <p>Feed it your credits, pull the lever, and get a random gun, shield and abilities you can afford.</p>
+    </header>
+
+    <section class="panel controls" aria-label="Roll settings">
+      <div class="fields">
+        <label>Agent
+          <select id="agent"></select>
+        </label>
+        <label>Credits
+          <input id="credits" type="number" inputmode="numeric" min="0" step="50" value="3900">
+        </label>
+        <label>Keep unspent
+          <input id="reserve" type="number" inputmode="numeric" min="0" step="50" value="0">
+        </label>
+      </div>
+      <div class="chips" aria-label="Quick credit amounts">
+        <button type="button" data-credits="800">Pistol round 800</button>
+        <button type="button" data-credits="2400">Half buy 2,400</button>
+        <button type="button" data-credits="3900">Full buy 3,900</button>
+        <button type="button" data-credits="9000">Rich 9,000</button>
+      </div>
+      <button id="roll" class="roll" type="button">ROLL</button>
+    </section>
+
+    <section class="panel result" aria-live="polite" aria-label="Your loadout">
+      <div class="reels">
+        <div class="reel">
+          <span class="label">Agent</span>
+          <div class="slot" id="reel-agent">?</div>
+        </div>
+        <div class="reel">
+          <span class="label">Weapon</span>
+          <div class="slot" id="reel-weapon">?</div>
+        </div>
+        <div class="reel">
+          <span class="label">Shield</span>
+          <div class="slot" id="reel-shield">?</div>
+        </div>
+      </div>
+      <div class="abilities" id="abilities"></div>
+      <div class="summary" id="summary"></div>
+    </section>
+
+    <section class="panel history" id="history-panel" hidden>
+      <h2>Recent rolls</h2>
+      <ol id="history"></ol>
+    </section>
+
+    <footer>
+      Prices are a community-sourced snapshot and change with patches. Fix them in <code>agents.js</code> and <code>weapons.js</code>.
+      Unofficial fan project, not endorsed by or affiliated with Riot Games. No real money involved.
+    </footer>
+  </main>
+
+  <script src="agents.js"></script>
+  <script src="weapons.js"></script>
+  <script src="roll.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
