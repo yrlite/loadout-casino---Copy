@@ -18,7 +18,7 @@
 
   return [
     w('Classic', 'Sidearm', 0, 1),
-    w('Shorty', 'Sidearm', 150),
+    w('Shorty', 'Sidearm', 300),
     w('Frenzy', 'Sidearm', 450),
     w('Ghost', 'Sidearm', 500),
     w('Bandit', 'Sidearm', 600),
